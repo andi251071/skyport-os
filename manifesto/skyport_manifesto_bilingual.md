@@ -1,0 +1,1 @@
+add bilingual founder manifesto
