@@ -1,139 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skyport OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyport OS | Kota Udara Masa Depan</title>
   <style>
-    /* Reset dan styling dasar */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background: #007acc;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #0a0a23;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
-    header h1 {
-      font-size: 1.5rem;
+    nav {
+      background: #1a1a40;
+      text-align: center;
+      padding: 10px;
     }
     nav a {
       color: white;
-      margin-left: 1.5rem;
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 960px;
+    .container {
+      padding: 40px;
+      max-width: 800px;
       margin: auto;
-      width: 90%;
     }
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: white;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      border-radius: 8px;
-      margin-bottom: 3rem;
-    }
-    .hero h2 {
-      color: #007acc;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    .features {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .feature {
-      background: white;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      padding: 1.5rem;
-      border-radius: 8px;
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-    }
-    .feature h3 {
-      margin-bottom: 1rem;
-      color: #007acc;
+    .lang-toggle {
+      float: right;
+      margin-top: -40px;
+      margin-right: 20px;
     }
     footer {
       text-align: center;
-      padding: 1rem 0;
-      background: #e4e7eb;
-      font-size: 0.9rem;
-      margin-top: auto;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
+      padding: 20px;
+      background: #0a0a23;
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Skyport OS</h1>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#features">Features</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1 id="judul">Skyport OS: Sistem Kota Udara Masa Depan</h1>
+    <div class="lang-toggle">
+      <button onclick="switchLang('id')">🇮🇩</button>
+      <button onclick="switchLang('en')">🇬🇧</button>
+    </div>
   </header>
-
-  <main>
-    <section id="hero" class="hero">
-      <h2>Welcome to Skyport OS</h2>
-      <p>A sovereign, ethical aerial smart city protocol from Indonesia.</p>
-    </section>
-
-    <section id="features" class="features">
-      <div class="feature">
-        <h3>Smart Integration</h3>
-        <p>Seamlessly connect aerial vehicles, infrastructure, and citizens.</p>
-      </div>
-      <div class="feature">
-        <h3>Ethical Governance</h3>
-        <p>Built on transparency, sovereignty, and community trust.</p>
-      </div>
-      <div class="feature">
-        <h3>Scalable Network</h3>
-        <p>Designed to grow with evolving technology and city needs.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="contact">
-    &copy; 2025 Skyport OS. All rights reserved.
+  <nav>
+    <a href="#home">Beranda / Home</a>
+    <a href="#docs">Dokumen / Documents</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#contact">Kontak / Contact</a>
+  </nav>
+  <div class="container">
+    <p id="deskripsi">
+      Skyport OS adalah sistem open-source untuk mengelola kota vertikal berbasis drone dan eVTOL, dirancang agar efisien, adil, dan mendukung kolaborasi global untuk masa depan berkelanjutan.
+    </p>
+  </div>
+  <footer>
+    &copy; 2025 Skyport OS. Dibangun oleh komunitas untuk dunia.
   </footer>
+
+  <script>
+    const content = {
+      id: {
+        judul: "Skyport OS: Sistem Kota Udara Masa Depan",
+        deskripsi:
+          "Skyport OS adalah sistem open-source untuk mengelola kota vertikal berbasis drone dan eVTOL, dirancang agar efisien, adil, dan mendukung kolaborasi global untuk masa depan berkelanjutan.",
+      },
+      en: {
+        judul: "Skyport OS: Future Airborne City System",
+        deskripsi:
+          "Skyport OS is an open-source system to manage vertical cities based on drones and eVTOL, designed to be efficient, equitable, and support global collaboration for a sustainable future.",
+      },
+    };
+
+    function switchLang(lang) {
+      document.getElementById("judul").innerText = content[lang].judul;
+      document.getElementById("deskripsi").innerText = content[lang].deskripsi;
+    }
+  </script>
 </body>
 </html>
 
