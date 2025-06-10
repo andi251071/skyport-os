@@ -1,0 +1,21 @@
+# AVIATOR-X Governance Protocol
+
+## 🎯 Purpose
+
+AVIATOR-X adalah modul AI Governance untuk Skyport OS, dirancang untuk mengelola proposal, pemungutan suara, dan validasi komunitas dalam kota udara cerdas masa depan.
+
+## ⚙️ Fitur Utama
+
+- Submit proposal terdesentralisasi
+- Voting publik berdasarkan identitas DID
+- Keputusan otomatis dengan ambang batas yang dapat dikonfigurasi
+
+## 🧪 Contoh Penggunaan
+
+```python
+from src.governance.aviatorx import AI_Governance
+
+gov = AI_Governance()
+p = gov.submit("Upgrade Air Lane", "Proposal to add night lanes", "0xUSER123")
+p.vote("yes")
+print(p.result())  # approved
